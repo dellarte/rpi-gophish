@@ -18,3 +18,7 @@ make version
 ```bash
 make push
 ```
+
+### Run the container
+```bash
+docker run -d -P --expose 3333 --expose 80 -e "ADMIN_ADDR=0.0.0.0" -e "ADMIN_PORT=3333" -e "PHISH_ADDR=0.0.0.0" -e "PHISH_PORT=80" -e "DB_PATH=data/gophish.db" -v ${HOME}/docker/data/gophish:/opt/gophish/data dellarte/rpi-gophish
